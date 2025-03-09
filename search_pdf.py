@@ -12,6 +12,12 @@ text_splitter = RecursiveCharacterTextSplitter(
     chunk_overlap=200,
     add_start_index=True,
 )
+# split the documents into chunks, each chunk is a Document object
+# i.e from langchain_core.documents import Document
+# Document(
+#     page_content="Dogs are great companions, known for their loyalty and friendliness.",
+#     metadata={"source": "mammal-pets-doc"},
+# ),
 all_splits = text_splitter.split_documents(docs)
 for split in all_splits[:1]:
     print(split)
